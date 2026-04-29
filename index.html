@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>yng.sam | Dropshipping</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+nav h1 {
+  color: #00ffcc;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* Section */
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+/* 3D Card */
+.card {
+  width: 300px;
+  height: 400px;
+  background: #1a1a1a;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.card:hover {
+  transform: rotateY(20deg) rotateX(10deg);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.card h2 {
+  padding: 15px;
+}
+
+.card p {
+  padding: 0 15px;
+  color: #ccc;
+}
+
+/* Hero */
+.hero {
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #00ffcc;
+}
+
+.hero p {
+  margin-top: 10px;
+  color: #aaa;
+}
+
+/* Scroll animation */
+.fade {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h1>yng.sam</h1>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero fade">
+  <div>
+    <h1>Welcome to yng.sam</h1>
+    <p>Premium Dropshipping Store with Modern 3D Experience</p>
+  </div>
+</section>
+
+<!-- Product Section -->
+<section class="fade">
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200">
+    <h2>Product 1</h2>
+    <p>Best quality product for your needs.</p>
+  </div>
+</section>
+
+<section class="fade">
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200">
+    <h2>Product 2</h2>
+    <p>Trending item with high demand.</p>
+  </div>
+</section>
+
+<section class="fade">
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200">
+    <h2>Product 3</h2>
+    <p>Fast shipping & premium feel.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<section class="hero fade">
+  <div>
+    <h1>Start Shopping Now</h1>
+    <p>yng.sam © 2026</p>
+  </div>
+</section>
+
+<script>
+
+// Scroll animation
+const fades = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  fades.forEach(fade => {
+    const top = fade.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      fade.classList.add('show');
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>
